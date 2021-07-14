@@ -1,42 +1,15 @@
 
 *~
-__pycache__
 .DS_Store
-
 /.idea/
-/.idea_save/
-/dist/
-/gam.egg-info/
-/gam/gam.egg-info/
-/gam_save/
 
-/readme.old.md
+output/*mhd
+output/*raw
+output/*txt
+output/*root
 
-/tests/conda activate gam
-/tests/old/
+log/*log
 
-/venv/
-
-/build
-
-/docs/build
-/docs/rtd_dark-20200527-1037.zip
-/docs/source/developer_guide.md.save
-/docs/source/gate_logo.png
-/docs/source/faq.rst.temp
-/docs/css/
-/docs/source/user_guide.md.save
-
-/save1/
-/save2/
-/save3/
-
-/.pycrunch-config.yaml
-/gate-experimental
-g
-/d
-gate_split_and_run.py
-/old_venv/
 ### Python template
 # Byte-compiled / optimized / DLL files
 __pycache__/
