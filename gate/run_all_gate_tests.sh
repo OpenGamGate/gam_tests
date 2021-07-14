@@ -22,6 +22,7 @@ cd ..
 
 cd gate_test009_voxels
 Gate mac/main.mac
+Gate mac/main_profiling.mac
 cd ..
 
 cd gate_test010_generic_source
@@ -36,6 +37,8 @@ Gate mac/main_4.mac
 cd .
 
 cd gate_test019_linac_phsp
+Gate mac/main-write-PhS.mac
+Gate mac/main-read-PhS.mac
 Gate mac/main.mac
 cd ..
 

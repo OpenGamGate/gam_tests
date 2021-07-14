@@ -120,12 +120,12 @@ def run_test019(sim):
     """
 
     # check stats
-    stats_ref = gam.read_stat_file('./gate_test019_linac_phsp/output/output-writePhS-stat.txt')
+    stats_ref = gam.read_stat_file('./gate/gate_test019_linac_phsp/output/output-writePhS-stat.txt')
     stats.counts.run_count = 1
     is_ok = gam.assert_stats(stats, stats_ref, 0.2)
 
     # check phsp # FIXME put (part of) this check in helpers_tests
-    data_ref, keys_ref, m_ref = phsp.load('./gate_test019_linac_phsp/output/output-PhS-g.root')
+    data_ref, keys_ref, m_ref = phsp.load('./gate/gate_test019_linac_phsp/output/output-PhS-g.root')
     data, keys, m = phsp.load('./output/test019_hits.root')
     i = 0
     ref_k = ['Ekine', 'Weight', 'X', 'Y', 'Z', 'dX', 'dY', 'dZ']

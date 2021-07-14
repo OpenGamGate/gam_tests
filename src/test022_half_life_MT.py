@@ -4,7 +4,7 @@
 import os
 import sys
 
-cmd = './test022_half_life.py 3'
+cmd = './src/test022_half_life.py 3'
 r = os.system(cmd)
 
 sys.exit(r)

@@ -42,7 +42,7 @@ crystal.material = 'NaITl'
 ## FIXME FIXME not correct position
 start = [-25 * cm, -20 * cm, 4 * cm]
 size = [100, 80, 1]
-#size = [10, 8, 1] # FIXME
+# size = [10, 8, 1] # FIXME
 tr = [0.5 * cm, 0.5 * cm, 0]
 crystal.repeat = gam.repeat_array('crystal', start, size, tr)
 crystal.color = [1, 1, 0, 1]
@@ -110,7 +110,7 @@ sim.start()
 # stat
 stats = sim.get_actor('Stats')
 print(stats)
-stats_ref = gam.read_stat_file('./gate_test024_spect_detector/output/stat.txt')
+stats_ref = gam.read_stat_file('./gate/gate_test024_spect_detector/output/stat.txt')
 is_ok = gam.assert_stats(stats, stats_ref, tolerance=0.03)
 
 # root

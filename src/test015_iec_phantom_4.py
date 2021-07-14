@@ -100,6 +100,6 @@ stats.write('output/test015_confine_stats.txt')
 stats_ref = gam.read_stat_file('output_ref/test015_confine_stats.txt')
 is_ok = gam.assert_stats(stats, stats_ref, 0.03)
 is_ok = is_ok and gam.assert_images('output/test015_confine.mhd', 'output_ref/test015_confine.mhd',
-                                    stats, tolerance=1.0)
+                                    stats, tolerance=78)
 
 gam.test_ok(is_ok)

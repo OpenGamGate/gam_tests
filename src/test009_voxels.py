@@ -51,7 +51,7 @@ patient.voxel_materials = [[-900, 'G4_AIR'],
                            [800, 'G4_B-100_BONE'],
                            [6000, 'G4_BONE_COMPACT_ICRU']]
 # or alternatively, from a file (like in Gate)
-vm = gam.read_voxel_materials('./gate_test9_voxels/data/patient-HU2mat-v1.txt')
+vm = gam.read_voxel_materials('./gate/gate_test009_voxels/data/patient-HU2mat-v1.txt')
 assert vm == patient.voxel_materials
 patient.voxel_materials = vm
 # write the image of labels (None by default)
@@ -74,7 +74,7 @@ c.patient.electron = 3 * mm
 
 # add dose actor
 dose = sim.add_actor('DoseActor', 'dose')
-dose.save = 'output/test9-edep.mhd'
+dose.save = 'output/test009-edep.mhd'
 dose.mother = 'patient'
 dose.dimension = [99, 99, 99]
 dose.spacing = [2 * mm, 2 * mm, 2 * mm]
@@ -105,10 +105,10 @@ d = sim.get_actor('dose')
 print(d)
 
 # tests
-stats_ref = gam.read_stat_file('./gate_test9_voxels/output/stat.txt')
+stats_ref = gam.read_stat_file('./gate/gate_test009_voxels/output/stat.txt')
 is_ok = gam.assert_stats(stat, stats_ref, 0.15)
-is_ok = is_ok and gam.assert_images('output/test9-edep.mhd',
-                                    'gate_test9_voxels/output/output-Edep.mhd',
-                                    stat, tolerance=50)
+is_ok = is_ok and gam.assert_images('output/test009-edep.mhd',
+                                    './gate/gate_test009_voxels/output/output-Edep.mhd',
+                                    stat, tolerance=35)
 
 gam.test_ok(is_ok)

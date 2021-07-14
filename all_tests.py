@@ -34,7 +34,7 @@ print(f'Running {len(files)} tests')
 for f in files:
     print(f'-' * 70)
     print(f'Running: {f}', end='')
-    r = os.system('./' + f + f'> log/{f}.log')
+    r = os.system('src/' + f + f'> log/{f}.log')
     if r == 0:
         print(colored.stylize(' OK', color_ok), end='')
     else:

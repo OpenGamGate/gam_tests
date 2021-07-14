@@ -105,4 +105,4 @@ stats_ref = gam.read_stat_file('output_ref/test010_confine_stats.txt')
 is_ok = gam.assert_stats(stats, stats_ref, 0.10)
 is_ok = is_ok and gam.assert_images('output/test010-2-edep.mhd',
                                     'output_ref/test010-2-edep.mhd',
-                                    stats, tolerance=2)
+                                    stats, tolerance=57)

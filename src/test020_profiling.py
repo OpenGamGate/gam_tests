@@ -43,7 +43,7 @@ patient = sim.add_volume('Image', 'patient')
 patient.image = 'data/patient-4mm.mhd'
 patient.mother = 'fake'
 patient.material = 'G4_AIR'  # default material
-vm = gam.read_voxel_materials('./gate_test9_voxels/data/patient-HU2mat-v1.txt')
+vm = gam.read_voxel_materials('./gate/gate_test009_voxels/data/patient-HU2mat-v1.txt')
 patient.voxel_materials = vm
 patient.dump_label_image = 'output/test020_labels.mhd'
 
@@ -101,10 +101,10 @@ d = sim.get_actor('dose')
 print(d)
 
 # tests
-stats_ref = gam.read_stat_file('./gate_test9_voxels/output/stat_profiling.txt')
+stats_ref = gam.read_stat_file('./gate/gate_test009_voxels/output/stat_profiling.txt')
 stats_ref.counts.run_count = ui.number_of_threads
 is_ok = gam.assert_stats(stat, stats_ref, 0.1)
 is_ok = is_ok and gam.assert_images('output/test20-edep.mhd',
-                                    'gate_test9_voxels/output/output_profiling-Edep.mhd',
+                                    'gate/gate_test009_voxels/output/output_profiling-Edep.mhd',
                                     stat, tolerance=0.03)
 gam.test_ok(is_ok)

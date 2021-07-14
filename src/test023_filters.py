@@ -91,6 +91,6 @@ stats_ref = gam.read_stat_file('output_ref/test023_stats.txt')
 is_ok = gam.assert_stats(stat, stats_ref, 0.8)
 is_ok = is_ok and gam.assert_images('output/test023-edep.mhd',
                                     'output_ref/test023-edep.mhd',
-                                    stat, tolerance=0.1)
+                                    stat, tolerance=48)
 
 gam.test_ok(is_ok)

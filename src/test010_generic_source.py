@@ -125,11 +125,11 @@ print(dose)
 # gate_test10
 # Gate mac/main.mac
 # Current version is two times slower :(
-stats_ref = gam.read_stat_file('./gate_test10_generic_source/output/stat.txt')
+stats_ref = gam.read_stat_file('./gate/gate_test010_generic_source/output/stat.txt')
 print('-' * 80)
 is_ok = gam.assert_stats(stats, stats_ref, tolerance=0.05)
 is_ok = is_ok and gam.assert_images('output/test010-edep.mhd',
-                                    'gate_test10_generic_source/output/output-Edep.mhd',
-                                    stats, tolerance=16)
+                                    './gate/gate_test010_generic_source/output/output-Edep.mhd',
+                                    stats, tolerance=30)
 
 gam.test_ok(is_ok)

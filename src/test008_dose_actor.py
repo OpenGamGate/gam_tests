@@ -94,17 +94,17 @@ dose = sim.get_actor('dose')
 print(dose)
 
 # tests
-stats_ref = gam.read_stat_file('./gate_test008_dose_actor/output/stat.txt')
+stats_ref = gam.read_stat_file('./gate/gate_test008_dose_actor/output/stat.txt')
 is_ok = gam.assert_stats(stat, stats_ref, 0.10)
 
 print('Difference for EDEP')
 is_ok = gam.assert_images('output/test008-edep.mhd',
-                          'gate_test008_dose_actor/output/output-Edep.mhd',
-                          stat, tolerance=13, ignore_value=0, plot=True) and is_ok
+                          './gate/gate_test008_dose_actor/output/output-Edep.mhd',
+                          stat, tolerance=13, ignore_value=0) and is_ok
 
 print('Difference for uncertainty')
 is_ok = gam.assert_images('output/test008-edep_uncertainty.mhd',
-                          'gate_test008_dose_actor/output/output-Edep-Uncertainty.mhd',
-                          stat, tolerance=28, ignore_value=1, plot=True) and is_ok
+                          './gate/gate_test008_dose_actor/output/output-Edep-Uncertainty.mhd',
+                          stat, tolerance=28, ignore_value=1) and is_ok
 
 gam.test_ok(is_ok)

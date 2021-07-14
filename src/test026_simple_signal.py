@@ -43,7 +43,7 @@ source.particle = 'gamma'
 source.energy.mono = 80 * keV
 source.direction.type = 'momentum'
 source.direction.momentum = [0, 0, 1]
-source.activity = 2000000 * Bq
+source.activity = 200000 * Bq
 
 # add stat actor
 stats = sim.add_actor('SimulationStatisticsActor', 'Stats')
@@ -62,7 +62,7 @@ stats = sim.get_actor('Stats')
 
 # gate_test4_simulation_stats_actor
 # Gate mac/main.mac
-stats_ref = gam.read_stat_file('./gate_test4_simulation_stats_actor/output/stat.txt')
+stats_ref = gam.read_stat_file('./gate/gate_test004_simulation_stats_actor/output/stat.txt')
 is_ok = gam.assert_stats(stats, stats_ref, tolerance=0.03)
 
 gam.test_ok(is_ok)
