@@ -17,8 +17,14 @@ p.enable_decay = True
 p.apply_cuts = True  # default
 cuts = p.production_cuts
 mm = gam.g4_units('mm')
+cuts.world.gamma = 1 * mm
 cuts.world.electron = 0.1 * mm
+cuts.world.positron = 1 * mm
+cuts.world.proton = 1 * mm
+cuts.b1.gamma = 1 * mm
 cuts.b1.electron = 0.01 * mm
+cuts.b1.positron = 1 * mm
+cuts.b1.proton = 1 * mm
 
 # initialize
 sim.initialize()

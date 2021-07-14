@@ -7,7 +7,7 @@
 #=====================================================
 
 /gate/physics/addPhysicsList emstandard_opt4
-/gate/physics/addProcess RadioactiveDecay
+#/gate/physics/addProcess RadioactiveDecay
 /gate/physics/addProcess Decay
 
 /gate/physics/Gamma/SetCutInRegion      world 1 mm

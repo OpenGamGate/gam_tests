@@ -106,5 +106,5 @@ stats_ref.counts.run_count = ui.number_of_threads
 is_ok = gam.assert_stats(stat, stats_ref, 0.1)
 is_ok = is_ok and gam.assert_images('output/test20-edep.mhd',
                                     'gate/gate_test009_voxels/output/output_profiling-Edep.mhd',
-                                    stat, tolerance=0.03)
+                                    stat, tolerance=78)
 gam.test_ok(is_ok)

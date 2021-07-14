@@ -16,7 +16,8 @@ sim.source_manager.user_info_sources.pop('ion2')
 # change physics
 p = sim.get_physics_user_info()
 p.physics_list_name = 'G4EmStandardPhysics_option4'
-p.enable_decay = False
+p.enable_decay = True
+p.apply_cuts = True  # default
 cuts = p.production_cuts
 um = gam.g4_units('um')
 cuts.world.gamma = 7 * um

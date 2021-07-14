@@ -7,8 +7,10 @@
 #=====================================================
 
 /gate/physics/addPhysicsList emstandard_opt4
-/gate/physics/addProcess RadioactiveDecay
-/gate/physics/addProcess Decay
+
+# NO !! If enabled, very long, too much tracks ???
+#/gate/physics/addProcess RadioactiveDecay
+#/gate/physics/addProcess Decay
 
 /gate/physics/Gamma/SetCutInRegion      world 7 um
 /gate/physics/Electron/SetCutInRegion   world 7 um
