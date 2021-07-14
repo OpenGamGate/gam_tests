@@ -97,12 +97,12 @@ print(dose)
 stats_ref = gam.read_stat_file('./gate/gate_test008_dose_actor/output/stat.txt')
 is_ok = gam.assert_stats(stat, stats_ref, 0.10)
 
-print('Difference for EDEP')
+print('\nDifference for EDEP')
 is_ok = gam.assert_images('output/test008-edep.mhd',
                           './gate/gate_test008_dose_actor/output/output-Edep.mhd',
                           stat, tolerance=13, ignore_value=0) and is_ok
 
-print('Difference for uncertainty')
+print('\nDifference for uncertainty')
 is_ok = gam.assert_images('output/test008-edep_uncertainty.mhd',
                           './gate/gate_test008_dose_actor/output/output-Edep-Uncertainty.mhd',
                           stat, tolerance=28, ignore_value=1) and is_ok
