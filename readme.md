@@ -20,10 +20,6 @@ Only since the PR https://github.com/OpenGATE/Gate/pull/440
 
 Sometimes, the following error appears: `std::runtime_error: pybind11_object_dealloc()`
 
-# test 020
-
-invalid value encountered in sqrt
-
 # 'multiple' tests
 
 Not clear how to organize 'multiple' tests. For example, t013 use a '_base.py' that create a sim object. Also t019 return a sim object that can be modified before run. But t022 use argv on the command line for t022 with MT. 
