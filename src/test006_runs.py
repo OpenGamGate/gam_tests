@@ -9,6 +9,8 @@ sim = gam.Simulation()
 
 # main options
 ui = sim.user_info
+ui.verbose_level = gam.DEBUG
+ui.running_verbose_level = 0  # gam.EVENT
 ui.g4_verbose = False
 ui.visu = False
 ui.number_of_threads = 1

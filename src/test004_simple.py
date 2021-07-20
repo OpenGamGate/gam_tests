@@ -8,12 +8,13 @@ sim = gam.Simulation()
 
 # main options
 ui = sim.user_info
+ui.verbose_level = gam.DEBUG
+ui.running_verbose_level = gam.RUN
 ui.g4_verbose = False
 ui.g4_verbose_level = 1
 ui.visu = False
 ui.random_engine = 'MersenneTwister'
 ui.random_seed = 'auto'
-ui.verbose_level = gam.DEBUG
 print(ui)
 
 # set the world size like in the Gate macro
@@ -50,7 +51,7 @@ stats.track_types_flag = True
 sim.initialize()
 
 # start simulation
-# sim.apply_g4_command("/run/verbose 1")
+#sim.apply_g4_command("/run/verbose 1")
 sim.start()
 
 # get result
