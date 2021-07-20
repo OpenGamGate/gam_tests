@@ -3,8 +3,6 @@
 
 import gam
 
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -50,7 +48,6 @@ sim.apply_g4_command('/tracking/verbose 0')
 # s.g4_com("/tracking/verbose 1")
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 
 stats = sim.get_actor('Stats')

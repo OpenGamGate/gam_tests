@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+#import pdb
 import gam
 import uproot4 as uproot
 import sys
-
-# verbose level
-gam.log.setLevel(gam.INFO)  ## FIXME in SimulationUserInfo
 
 # create the simulation
 sim = gam.Simulation()
@@ -99,7 +97,6 @@ sim.run_timing_intervals = [[1 * sec, 10 * sec],
                             [15 * sec, 20 * sec]]  # "hole" in the timeline
 
 # create G4 objects
-gam.log.setLevel(gam.DEBUG)
 sim.initialize()
 
 # start simulation
@@ -110,6 +107,7 @@ stats = sim.get_actor('Stats')
 print(stats)
 
 # read phsp
+
 root = uproot.open(ta.output)
 branch = root['PhaseSpace']['GlobalTime']
 time = branch.array(library='numpy') / sec

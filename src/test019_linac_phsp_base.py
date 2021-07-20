@@ -9,9 +9,7 @@ import numpy as np
 
 def init_test019(nt):
     # global log level
-    gam.log.setLevel(gam.DEBUG)
-
-    # create the simulation
+        # create the simulation
     sim = gam.Simulation()
 
     # main options
@@ -101,7 +99,6 @@ def run_test019(sim):
     sim.apply_g4_command(s)
 
     # start simulation
-    gam.source_log.setLevel(gam.RUN)
     sim.start()
 
     # print results

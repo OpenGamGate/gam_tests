@@ -12,8 +12,6 @@ ui = sim.user_info
 ui.g4_verbose = False
 ui.g4_verbose_level = 1
 ui.visu = False
-gam.log.setLevel(gam.DEBUG)
-
 # units
 m = gam.g4_units('m')
 cm = gam.g4_units('cm')

@@ -4,8 +4,6 @@
 import gam
 from scipy.spatial.transform import Rotation
 
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -112,7 +110,7 @@ sim.apply_g4_command('/tracking/verbose 0')
 # sim.apply_g4_command("/tracking/verbose 1")
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
+
 sim.start()
 
 # get results

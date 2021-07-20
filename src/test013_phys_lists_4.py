@@ -32,7 +32,6 @@ print(sim.physics_manager.dump_cuts())
 # start simulation
 # sim.set_g4_verbose(True)
 # sim.apply_g4_command("/tracking/verbose 1")
-gam.source_log.setLevel(gam.DEBUG)  # FIXME do not work
 sim.start()
 
 stats = sim.get_actor('Stats')

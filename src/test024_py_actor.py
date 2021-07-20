@@ -3,9 +3,6 @@
 
 import gam
 
-# verbose level
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -50,7 +47,6 @@ sim.add_actor('TestActor', 'Stats2')
 sim.initialize()
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 
 stats = sim.get_actor('Stats')

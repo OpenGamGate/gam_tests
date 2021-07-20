@@ -12,8 +12,6 @@ ui.g4_verbose = False
 ui.g4_verbose_level = 1
 ui.visu = False
 ui.number_of_threads = 1
-gam.log.setLevel(gam.DEBUG)
-
 # some units
 cm = gam.g4_units('cm')
 m = gam.g4_units('m')
@@ -92,7 +90,6 @@ print(sim)
 print('Simulation seed:', sim.actual_random_seed)
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 
 # get results

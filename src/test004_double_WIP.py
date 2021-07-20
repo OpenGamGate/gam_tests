@@ -10,10 +10,6 @@ Seems not really possible from Geant4 point of view, I did no manage to delete a
 
 """
 
-# verbose level
-gam.log.setLevel(gam.INFO)
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -63,7 +59,6 @@ sim.initialize()
 
 # start simulation
 # sim.apply_g4_command("/run/verbose 1")
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 stats = sim.get_actor('Stats')
 print(stats)

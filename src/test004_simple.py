@@ -3,9 +3,6 @@
 
 import gam
 
-# verbose level
-gam.log.setLevel(gam.INFO) ## FIXME in SimulationUserInfo
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -16,7 +13,7 @@ ui.g4_verbose_level = 1
 ui.visu = False
 ui.random_engine = 'MersenneTwister'
 ui.random_seed = 'auto'
-
+ui.verbose_level = gam.DEBUG
 print(ui)
 
 # set the world size like in the Gate macro
@@ -54,7 +51,6 @@ sim.initialize()
 
 # start simulation
 # sim.apply_g4_command("/run/verbose 1")
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 
 # get result

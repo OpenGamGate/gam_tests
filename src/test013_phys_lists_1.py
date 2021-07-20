@@ -34,7 +34,6 @@ print(sim.physics_manager.dump_cuts())
 
 # start simulation
 # sim.apply_g4_command("/tracking/verbose 1")
-gam.source_log.setLevel(gam.DEBUG)  # FIXME do not work
 sim.start()
 
 # Gate mac/main_1.mac

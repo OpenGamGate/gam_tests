@@ -5,8 +5,6 @@ import gam
 import contrib.gam_iec_phantom as gam_iec
 
 # global log level
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 

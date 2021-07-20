@@ -7,8 +7,6 @@ from scipy.spatial.transform import Rotation
 from box import Box, BoxList
 
 # global log level
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -90,7 +88,6 @@ sim.initialize()
 sim.check_volumes_overlap(verbose=True)
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 
 # print results

@@ -5,8 +5,6 @@ import gam
 from scipy.spatial.transform import Rotation
 
 # global log level
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 print(f'Volumes types: {sim.dump_volume_types()}')
@@ -116,7 +114,6 @@ sim.apply_g4_command('/tracking/verbose 0')
 # sim.g4_com("/tracking/verbose 1")
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 
 # print results at the end

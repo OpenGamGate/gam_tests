@@ -3,9 +3,6 @@
 
 import gam
 
-# verbose level
-gam.log.setLevel(gam.INFO)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -53,7 +50,6 @@ s.track_types_flag = True
 sim.initialize()
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 #sim.apply_g4_command("/run/verbose 0")
 sim.start()
 

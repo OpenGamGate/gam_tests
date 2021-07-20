@@ -4,8 +4,6 @@
 import gam
 
 # set log level
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -14,6 +12,7 @@ ui = sim.user_info
 ui.g4_verbose = False
 ui.visu = False
 ui.number_of_threads = 1
+gam.log.debug(ui)
 
 cm = gam.g4_units('cm')
 
@@ -78,9 +77,6 @@ sim.run_timing_intervals = [[0, 0.5 * sec],
 # create G4 objects
 sim.initialize()
 print(sim.dump_sources())
-
-# control log : INFO = each RUN, DEBUG = each Event
-gam.source_log.setLevel(gam.EVENT)  ## FIXME do not work
 
 # start simulation
 sim.start()

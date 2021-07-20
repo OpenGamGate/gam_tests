@@ -3,9 +3,6 @@
 
 import gam
 
-# verbose level
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -70,7 +67,6 @@ print('Simulation seed:', sim.actual_random_seed)
 # sim.g4_com("/tracking/verbose 1")
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 print(sim.dump_sources())
 

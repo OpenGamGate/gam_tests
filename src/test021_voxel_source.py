@@ -13,7 +13,6 @@ ui = sim.user_info
 ui.g4_verbose = False
 ui.visu = False
 ui.number_of_threads = 1
-gam.log.setLevel(gam.RUN)  # FIXME to put in ui ?
 print(ui)
 
 # add a material database

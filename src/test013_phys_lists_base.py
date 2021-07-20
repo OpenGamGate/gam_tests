@@ -5,9 +5,6 @@ import gam
 
 
 def create_pl_sim():
-    # verbose level
-    gam.log.setLevel(gam.INFO)
-
     # create the simulation
     sim = gam.Simulation()
 

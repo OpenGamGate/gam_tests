@@ -4,6 +4,7 @@
 import os
 from os import listdir
 from os.path import isfile, join
+import time
 from gam.helpers import *
 
 mypath = 'src/'
@@ -30,13 +31,16 @@ for f in onlyfiles:
 files = sorted(files)
 
 print(f'Running {len(files)} tests')
+print(f'-' * 70)
 
 for f in files:
-    print(f'-' * 70)
-    print(f'Running: {f}', end='')
+    start = time.time()
+    print(f'Running: {f:<40}  ', end='')
     r = os.system('src/' + f + f'> log/{f}.log')
     if r == 0:
         print(colored.stylize(' OK', color_ok), end='')
     else:
         print(colored.stylize(' FAILED !', color_error), end='')
-    print(f' logfile : log/{f}.log')
+    end = time.time()
+    log = f'log/{f}.log'
+    print(f' {log:<45}  {end - start:0.1f} s')

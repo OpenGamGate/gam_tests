@@ -13,7 +13,6 @@ ui.g4_verbose = False
 ui.g4_verbose_level = 1
 ui.visu = False
 ui.number_of_threads = 1
-gam.log.setLevel(gam.DEBUG)  # FIXME to put in ui
 print(ui)
 
 # add a material database

@@ -3,9 +3,6 @@
 
 import gam
 
-# global log level
-gam.log.setLevel(gam.RUN)
-
 # create the simulation
 sim = gam.Simulation()
 
@@ -59,7 +56,6 @@ sim.initialize()
 # sim.check_volumes_overlap(verbose=True)
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 
 # print results

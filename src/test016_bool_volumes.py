@@ -5,8 +5,6 @@ import gam
 from scipy.spatial.transform import Rotation
 
 # global log level
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 print(f'Volumes types: {sim.dump_volume_types()}')
@@ -84,7 +82,6 @@ sim.initialize()
 sim.check_volumes_overlap(verbose=True)
 
 # start simulation
-gam.source_log.setLevel(gam.RUN)
 sim.start()
 
 # print results at the end

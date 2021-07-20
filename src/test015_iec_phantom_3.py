@@ -6,8 +6,6 @@ import contrib.gam_iec_phantom as gam_iec
 from scipy.spatial.transform import Rotation
 
 # global log level
-gam.log.setLevel(gam.DEBUG)
-
 # create the simulation
 sim = gam.Simulation()
 
