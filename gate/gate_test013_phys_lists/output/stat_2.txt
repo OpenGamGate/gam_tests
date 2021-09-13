@@ -4,19 +4,19 @@
 # NumberOfSteps  = 667892
 # NumberOfGeometricalSteps  = 33937
 # NumberOfPhysicalSteps     = 633955
-# ElapsedTime           = 5.87862
-# ElapsedTimeWoInit     = 2.08039
-# StartDate             = Wed Jul 14 18:50:15 2021
-# EndDate               = Wed Jul 14 18:50:21 2021
+# ElapsedTime           = 6.80453
+# ElapsedTimeWoInit     = 2.72427
+# StartDate             = Wed Aug 25 17:06:12 2021
+# EndDate               = Wed Aug 25 17:06:18 2021
 # StartSimulationTime        = 0
 # StopSimulationTime         = 1
 # CurrentSimulationTime      = 1.00005
 # VirtualStartSimulationTime = 0
 # VirtualStopSimulationTime  = 1
 # ElapsedSimulationTime      = 1.00005
-# PPS (Primary per sec)      = 4861.11
-# TPS (Track per sec)        = 35017.5
-# SPS (Step per sec)         = 321042
+# PPS (Primary per sec)      = 3712.18
+# TPS (Track per sec)        = 26741.1
+# SPS (Step per sec)         = 245163
 # Track types: 
 # C12 = 7
 # N14 = 4

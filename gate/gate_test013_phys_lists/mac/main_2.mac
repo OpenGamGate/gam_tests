@@ -8,7 +8,7 @@
 
 /gate/physics/addPhysicsList QGSP_BERT_EMZ
 
-#/gate/physics/addProcess RadioactiveDecay
+/gate/physics/addProcess RadioactiveDecay
 #/gate/physics/addProcess Decay
 ## DOES NOT WORK !!!! No decay ????
 

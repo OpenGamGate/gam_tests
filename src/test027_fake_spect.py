@@ -97,23 +97,38 @@ sim.add_actor('SimulationStatisticsActor', 'Stats')
 # hits collection
 hc = sim.add_actor('HitsCollectionActor', 'hc')
 hc.mother = crystal.name
-hc.branches = ['KineticEnergy', 'PostPosition', 'DepositedEnergy', 'GlobalTime', 'VolumeName']
-hc.branches = ['KineticEnergy', 'PostPosition']
+hc.branches = ['KineticEnergy', 'PostPosition', 'TotalEnergyDeposit', 'GlobalTime', 'VolumeName']
 
 # create G4 objects
 sim.initialize()
 
 # start simulation
+sec = gam.g4_units('second')
+sim.run_timing_intervals = [[0, 1 * sec]]
 sim.start()
 
 # stat
 stats = sim.get_actor('Stats')
 print(stats)
 stats_ref = gam.read_stat_file('./gate/gate_test024_spect_detector/output/stat.txt')
-is_ok = gam.assert_stats(stats, stats_ref, tolerance=0.03)
+is_ok = gam.assert_stats(stats, stats_ref, tolerance=0.05)
 
 # root
+ref_hits = uproot.open('./gate/gate_test024_spect_detector/output/spect.root')['Hits']
+rn = ref_hits.num_entries
+ref_hits = ref_hits.arrays(library="numpy")
+print(rn, ref_hits.keys())
+
 hits = uproot.open('hits.root')['Hits']
-hits = hits.arrays(library="numpy")
 n = hits.num_entries
-print(n, hits)
+hits = hits.arrays(library="numpy")
+print(n, hits.keys())
+
+diff = gam.rel_diff(float(rn), n)
+print(f'Nb values: {rn} {n} {diff:.2f}%')
+
+# how to compare hits ?
+# 1) branch names correspondence, nb value % diff
+# 2) if float, compare mean max min std ?
+for k in ref_hits:
+    is_ok = gam.assert_tree_branch(ref_hits[k], k, hits)

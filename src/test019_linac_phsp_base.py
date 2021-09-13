@@ -9,7 +9,7 @@ import numpy as np
 
 def init_test019(nt):
     # global log level
-        # create the simulation
+    # create the simulation
     sim = gam.Simulation()
 
     # main options

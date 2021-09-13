@@ -36,7 +36,10 @@ print(f'-' * 70)
 for f in files:
     start = time.time()
     print(f'Running: {f:<40}  ', end='')
-    r = os.system('src/' + f + f'> log/{f}.log')
+    cmd = f'./src/{f}'
+    log = f'log/{f}.log'
+    r = os.system(f'{cmd} > {log}')
+    # subprocess.run(cmd, stdout=f, shell=True, check=True)
     if r == 0:
         print(colored.stylize(' OK', color_ok), end='')
     else:
