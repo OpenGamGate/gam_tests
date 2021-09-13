@@ -3,7 +3,7 @@
 
 # import pdb
 import gam
-import uproot4 as uproot
+import uproot
 import sys
 
 # create the simulation

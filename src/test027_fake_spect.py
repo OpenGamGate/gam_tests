@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import gam
-import uproot4 as uproot
+import uproot
 
 # create the simulation
 sim = gam.Simulation()
