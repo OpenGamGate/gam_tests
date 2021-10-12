@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import gam
+import gam_gate as gam
 from test013_phys_lists_base import create_pl_sim
 
 # create simulation

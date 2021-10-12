@@ -5,7 +5,7 @@ import os
 from os import listdir
 from os.path import isfile, join
 import time
-from gam.helpers import *
+from gam_gate.helpers import *
 
 mypath = 'src/'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]

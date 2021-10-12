@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import gam
+import gam_gate as gam
 from scipy.spatial.transform import Rotation
 
 # create the simulation

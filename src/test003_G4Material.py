@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import gam
+import gam_gate as gam
 import gam_g4 as g4
 import math
 

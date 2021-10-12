@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import gam
+import gam_gate as gam
 import gam_g4
 import uproot
 
@@ -88,9 +88,26 @@ sim.add_actor('SimulationStatisticsActor', 'Stats')
 hc = sim.add_actor('HitsCollectionActor', 'hc')
 # hc.mother = [crystal1.name, crystal2.name]  # FIXME
 hc.mother = [crystal1.name, crystal2.name]
-hc.output = 'hits.root'
+hc.output = 'output/test0025_hits.root'
 hc.branches = ['KineticEnergy', 'PostPosition', 'TotalEnergyDeposit', 'GlobalTime', 'VolumeName']
+
+
 # hc.branches = ['KineticEnergy', 'PostPosition', 'TotalEnergyDeposit', 'GlobalTime']
+
+# branch creation from py ?
+def branch_fill(branch, step, touchable):
+    # print(step)
+    e = step.GetPostStepPoint().GetKineticEnergy()
+    # print(e)
+    branch.push_back_double(e)
+    # branch.push_back_double(123.3)
+    # print('done')
+
+
+# FIXME bug at destructor
+gam_g4.GamBranch.NewDynamicBranch('MyBranch', 'D', branch_fill)
+hc.branches.append('MyBranch')
+print(hc.branches)
 
 # create G4 objects
 sim.initialize()
@@ -106,32 +123,43 @@ print(stats)
 stats_ref = gam.read_stat_file('./gate/gate_test025_hits_collection/output/stat.txt')
 is_ok = gam.assert_stats(stats, stats_ref, tolerance=0.05)
 
-# root
-ref_hits = uproot.open('./gate/gate_test025_hits_collection/output/hits.root')['Hits']
+# read Gate root file
+gate_file = './gate/gate_test025_hits_collection/output/hits.root'
+ref_hits = uproot.open(gate_file)['Hits']
+print(gate_file)
 rn = ref_hits.num_entries
 ref_hits = ref_hits.arrays(library="numpy")
 print(rn, ref_hits.keys())
 
-hits = uproot.open('hits.root')['Hits']
+# read this simulation output root file
+hits = uproot.open(hc.output)['Hits']
 n = hits.num_entries
 hits = hits.arrays(library="numpy")
 print(n, hits.keys())
 
+# compare number of values in both root files
 diff = gam.rel_diff(float(rn), n)
-gam.print_test(diff < 5, f'Nb values: {rn} {n} {diff:.2f}%')
+is_ok = gam.print_test(diff < 5, f'Nb values: {rn} {n} {diff:.2f}%')
 
+# print branches
 hc = sim.get_actor('hc')
 ab = gam_g4.GamBranch.GetAvailableBranches()
 for b in ab:
     print(b.fBranchName, b.fBranchType)
-
 tree = hc.GetHits()
 print('Tree', tree.fTreeName)
 for b in tree.fBranches:
     print('Branch', b.fBranchName, b.size())
 
-# how to compare hits ?
-# 1) branch names correspondence, nb value % diff
+# compare some hits with gate
+# 1) branch names correspondence, nb value % diff or absolute diff (position in mm)
 # 2) if float, compare mean max min std ?
 for k in ref_hits:
-    is_ok = gam.assert_tree_branch(ref_hits[k], k, hits)
+    is_ok = gam.assert_tree_branch(ref_hits[k], k, hits) and is_ok
+
+# FIXME add comparison static/dynamic branch
+
+print('release')
+gam_g4.GamBranch.FreeBranches()
+tree.FreeBranches()
+print('done')

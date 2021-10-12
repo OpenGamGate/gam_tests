@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-import gam
+import gam_gate as gam
 import contrib.gam_linac as gam_linac
 import gatetools.phsp as phsp
 import numpy as np
@@ -144,5 +144,12 @@ def run_test019(sim):
         gam.print_test(t, f'{k:20} {ymean:.3f} vs {xmean:.3f} -> {diff * 100:.2f}% ({res})')
         is_ok = is_ok and t
         i = i + 1
+
+    print('---'*80)
+    print(keys_ref)
+    print(keys)
+    gam.compare_branches(data_ref, data, 'Ekine', 'KineticEnergy', 0.1)
+
+
 
     gam.test_ok(is_ok)

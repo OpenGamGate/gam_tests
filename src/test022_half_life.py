@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # import pdb
-import gam
+import gam_gate as gam
 import uproot
 import sys
 
